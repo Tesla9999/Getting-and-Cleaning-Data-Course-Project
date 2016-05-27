@@ -1,8 +1,8 @@
 # Getting-and-Cleaning-Data-Course-Project
 
-Assignment for Getting and Cleaning Data
+#Assignment for Getting and Cleaning Data
 
-The project has 5 parts: 
+##The project has 5 parts: 
 
 1. Merges the training and the test sets to create one data set.
 
@@ -16,7 +16,7 @@ The project has 5 parts:
    each variable for each activity and each subject.
 
 
-For the run_analysis.R
+##For the run_analysis.R
 
 It downloads the zip file from the url to the current working folder, then unzip to the default folders.
 
@@ -38,11 +38,11 @@ The following files are needed to have a merged dataset:
 
 "UCI HAR Dataset/activity_labels.txt"
 
-The code will merge all the data, assign corresponding labels to every variable and finally output the
 
- tidydata.txt for mean of each each variable for each activity and each subject.
+##The code will merge all the data, assign corresponding labels to every variable and finally output the tidydata.txt for mean of each each variable for each activity and each subject.
 
-Code book for important variables in the run_analysis.R
+
+##Code book for important variables in the run_analysis.R
 
 x_test: dataset from ("UCI HAR Dataset/test/X_test.txt")
 
@@ -69,7 +69,7 @@ subject: subject ids, temporary merged dataset from subject_test, subject_train)
 
 merged_data: final merged dataset for part1, 3, and 4 **
 
-> str(merged_data)
+\> str(merged_data)
 
 'data.frame':	10299 obs. of  563 variables:
 
@@ -82,7 +82,7 @@ merged_data: final merged dataset for part1, 3, and 4 **
 ... ...
  
 
-> names(merged_data)
+\> names(merged_data)
 
  [1] "subject"                              "tBodyAcc-mean()-X"                   
 
@@ -102,7 +102,7 @@ merged_data: final merged dataset for part1, 3, and 4 **
 
 extracted: part 2 required dataset **
 
- > str(extracted)
+\> str(extracted)
 
  'data.frame':	10299 obs. of  66 variables:
 
