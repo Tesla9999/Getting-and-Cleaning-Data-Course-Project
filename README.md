@@ -67,6 +67,8 @@ test_label: activity labels (numeric) of the measurements, temporary merged data
 
 subject: subject ids, temporary merged dataset from subject_test, subject_train) # 10299 (row) x 1 (col)
 
+###Most import and Finally we will get:
+
 ###merged_data: final merged dataset for part1, 3, and 4
 
 Example:
