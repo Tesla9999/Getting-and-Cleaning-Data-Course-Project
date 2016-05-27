@@ -102,7 +102,7 @@ merged_data: final merged dataset for part1, 3, and 4 **
 
 extracted: part 2 required dataset **
 
-> str(extracted)
+ > str(extracted)
 
  'data.frame':	10299 obs. of  66 variables:
 
@@ -116,7 +116,7 @@ extracted: part 2 required dataset **
 
 tidydata: part 5 requried dataset **
 
-> str(tidydata)
+\> str(tidydata)
 
 'data.frame':	180 obs. of  563 variables:
 
@@ -131,6 +131,7 @@ tidydata: part 5 requried dataset **
  $ tBodyAcc-mean()-Z                   : num  -0.111 -0.106 -0.113 -0.111 -0.108 ...
 
 ... ...
+
 
 Thanks for reading!
 
