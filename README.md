@@ -67,7 +67,9 @@ test_label: activity labels (numeric) of the measurements, temporary merged data
 
 subject: subject ids, temporary merged dataset from subject_test, subject_train) # 10299 (row) x 1 (col)
 
-###merged_data: final merged dataset for part1, 3, and 4 **
+###merged_data: final merged dataset for part1, 3, and 4
+
+Example:
 
 \> str(merged_data)
 
@@ -101,7 +103,9 @@ subject: subject ids, temporary merged dataset from subject_test, subject_train)
  [563] "activity"   
  
 
-###extracted: part 2 required dataset **
+###extracted: part 2 required dataset
+
+Example:
 
 \> str(extracted)
 
@@ -116,7 +120,9 @@ subject: subject ids, temporary merged dataset from subject_test, subject_train)
 ... ...
 
 
-###tidydata: part 5 requried dataset **
+###tidydata: part 5 requried dataset
+
+Example:
 
 \> str(tidydata)
 
