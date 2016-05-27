@@ -73,4 +73,4 @@ merged_data$subject <- as.factor(merged_data$subject)
 tidydata <- aggregate(merged_data[, 2:562], by =list(subject = 
                       merged_data$subject, activity = merged_data$activity),
                       mean, na.rm =TRUE)
-write.table(tidydata, "tidyData.txt", row.name=FALSE)
+write.table(tidydata, "tidydata.txt", row.name=FALSE)
