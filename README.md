@@ -1,5 +1,7 @@
 # Getting-and-Cleaning-Data-Course-Project
+
 Assignment for Getting and Cleaning Data
+
 The project has 5 parts: 
 
 1. Merges the training and the test sets to create one data set.
