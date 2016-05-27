@@ -60,7 +60,7 @@ levels(merged_data$activity) <- act_label$V2
 
 # 4. Uses descriptive activity names to name the activities in the data set
 ## it has already beed done previously by names(test_val) <- features$V2
-## before merging all the dataset (line #34), check using names(merged_data)
+## before merging all the dataset (line #36), check using names(merged_data)
 
 # 5. creates an independent tidy data set with the average of each variable 
 ## change the "subject" column to factor
