@@ -20,7 +20,7 @@
 
 It downloads the zip file from the url to the current working folder, then unzip to the default folders.
 
-The following files are needed to have a merged dataset:
+The following files are actually needed to form the merged dataset:
 
 "UCI HAR Dataset/test/X_test.txt"
 
