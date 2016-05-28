@@ -14,87 +14,22 @@ subject_train: dataset from ("UCI HAR Dataset/train/subject_train.txt")
 
 features: dataset from ("UCI HAR Dataset/features.txt")
 
-act_label: dataset from ("UCI HAR Dataset/activity_labels.txt")
+activity_label: dataset from ("UCI HAR Dataset/activity_labels.txt")
 
+activity: activity ids
 
-test_val: acutual measurements, temporary merged dataset from  x_test and x_train # 10299 (row) x 561 (col) 
+subject: subject ids
 
-test_label: activity labels (numeric) of the measurements, temporary merged dataset from) # 10299 (row) x 1 (col)
+index: index of the list of names with mean and std for subsetting
 
-subject: subject ids, temporary merged dataset from subject_test, subject_train) # 10299 (row) x 1 (col)
+activity_names: temporary dataset to give descriptive names to activity id
 
-###merged_data: final merged dataset for part1, 3, and 4
+###merged_data: merged dataset for part1
 
-Example:
+###extract: part 2 required dataset, extracted without descriptive name, subject id and activity id
 
-\> str(merged_data)
+###extracted_data: for part 3 and 4, extracted dataset with descriptive names, subject ids and descriptive activity ids are added as the 1st 2 columns
 
-'data.frame':	10299 obs. of  563 variables:
-
- $ subject                             : Factor w/ 30 levels "1","2","3","4",..: 2 2 2 2 2 2 2 2 2 2 ...
-
- $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
-
- $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0
-
-... ...
- 
-
-\> names(merged_data)
-
- [1] "subject"                              "tBodyAcc-mean()-X"                   
-
- [3] "tBodyAcc-mean()-Y"                    "tBodyAcc-mean()-Z"                   
-
- [5] "tBodyAcc-std()-X"                     "tBodyAcc-std()-Y"                     
-
-... ... (skipped) 
-
- [557] "angle(tBodyAccJerkMean),gravityMean)" "angle(tBodyGyroMean,gravityMean)"    
-
- [559] "angle(tBodyGyroJerkMean,gravityMean)" "angle(X,gravityMean)"                
-
- [561] "angle(Y,gravityMean)"                 "angle(Z,gravityMean)"                
-
- [563] "activity"   
- 
-
-###extracted: part 2 required dataset
-
-Example:
-
-\> str(extracted)
-
- 'data.frame':	10299 obs. of  66 variables:
-
- $ tBodyAcc-mean()-X          : num  0.257 0.286 0.275 0.27 0.275 ...
-
- $ tBodyAcc-mean()-Y          : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
-
- $ tBodyAcc-mean()-Z          : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
-
-... ...
-
-
-###tidydata: part 5 requried dataset
-
-Example:
-
-\> str(tidydata)
-
-'data.frame':	180 obs. of  563 variables:
-
- $ subject                             : Factor w/ 30 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10 ...
-
- $ activity                            : Factor w/ 6 levels "WALKING","WALKING_UPSTAIRS",..: 1 1 1 1 1 1 1 1 1 1 ...
-
- $ tBodyAcc-mean()-X                   : num  0.277 0.276 0.276 0.279 0.278 ...
-
- $ tBodyAcc-mean()-Y                   : num  -0.0174 -0.0186 -0.0172 -0.0148 -0.0173 ...
-
- $ tBodyAcc-mean()-Z                   : num  -0.111 -0.106 -0.113 -0.111 -0.108 ...
-
-... ...
-
+###tidydata: part 5 requried dataset, summarizing the mean of the extracted_data by subject id and activity id
 
 Thanks for reading!
