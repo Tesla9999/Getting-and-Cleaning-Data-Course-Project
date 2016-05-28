@@ -39,109 +39,74 @@ The following files are actually needed to form the merged dataset:
 "UCI HAR Dataset/activity_labels.txt"
 
 
-##The code will merge all the data, assign corresponding labels to every variable and finally output the tidydata.txt for mean of each each variable for each activity and each subject.
+##The code will do:
 
+1. merge all the measurement data to one dataset "merged_data"
 
-##Code book for important variables in the run_analysis.R
+2. extract the dataset only for the mean and standard deviation to "extract"
+ 
+3. assign descriptive labels to every variable and add 2 column - "subject" and "activity" to the extracted dataset
 
-x_test: dataset from ("UCI HAR Dataset/test/X_test.txt")
+4. rename the "activity" column from numbers to descriptive names, the fianl extracted data is stored in "extracted_data"
 
-y_test: dataset from ("UCI HAR Dataset/test/y_test.txt")
+5. output the "tidydata" to "tidydata.txt" for mean of each each variable for each activity and each subject
 
-subject_test: dataset from ("UCI HAR Dataset/test/subject_test.txt")
-
-x_train: dataset from ("UCI HAR Dataset/train/X_train.txt")
-
-y_traind: dataset from ("UCI HAR Dataset/train/y_train.txt")
-
-subject_train: dataset from ("UCI HAR Dataset/train/subject_train.txt")
-
-features: dataset from ("UCI HAR Dataset/features.txt")
-
-act_label: dataset from ("UCI HAR Dataset/activity_labels.txt")
-
-
-test_val: acutual measurements, temporary merged dataset from  x_test and x_train # 10299 (row) x 561 (col) 
-
-test_label: activity labels (numeric) of the measurements, temporary merged dataset from) # 10299 (row) x 1 (col)
-
-subject: subject ids, temporary merged dataset from subject_test, subject_train) # 10299 (row) x 1 (col)
-
-###Most import and Finally we will get:
-
-###merged_data: final merged dataset for part1, 3, and 4
-
-Example:
+Examples for the 3 most important datasets "merged_data", "extracted_data" and "tidydata":
 
 \> str(merged_data)
 
-'data.frame':	10299 obs. of  563 variables:
+data.frame':	10299 obs. of  561 variables:
 
- $ subject                             : Factor w/ 30 levels "1","2","3","4",..: 2 2 2 2 2 2 2 2 2 2 ...
-
- $ tBodyAcc-mean()-X                   : num  0.257 0.286 0.275 0.27 0.275 ...
-
- $ tBodyAcc-mean()-Y                   : num  -0.0233 -0.0132 -0.0261 -0
+ $ V1  : num  0.257 0.286 0.275 0.27 0.275 ...
+ 
+ $ V2  : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
+ 
+ $ V3  : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
+ 
+ $ V4  : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
+ 
+ $ V5  : num  -0.92 -0.967 -0.97 -0.973 -0.967 ...
+ 
+ $ V6  : num  -0.668 -0.945 -0.963 -0.967 -0.978 ...
 
 ... ...
  
 
-\> names(merged_data)
+\> str(extracted_data)
 
- [1] "subject"                              "tBodyAcc-mean()-X"                   
+'data.frame':	10299 obs. of  81 variables:
 
- [3] "tBodyAcc-mean()-Y"                    "tBodyAcc-mean()-Z"                   
+ $ subject                        : Factor w/ 30 levels "1","2","3","4",..: 2 2 2 2 2 2 2 2 2 2 ...
 
- [5] "tBodyAcc-std()-X"                     "tBodyAcc-std()-Y"                     
+ $ activity                       : Factor w/ 6 levels "WALKING","WALKING_UPSTAIRS",..: 5 5 5 5 5 5 5 5 5 5 ...
 
-... ... (skipped) 
+ $ tBodyAcc-mean()-X              : num  0.257 0.286 0.275 0.27 0.275 ...
 
- [557] "angle(tBodyAccJerkMean),gravityMean)" "angle(tBodyGyroMean,gravityMean)"    
+ $ tBodyAcc-mean()-Y              : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
 
- [559] "angle(tBodyGyroJerkMean,gravityMean)" "angle(X,gravityMean)"                
+ $ tBodyAcc-mean()-Z              : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
 
- [561] "angle(Y,gravityMean)"                 "angle(Z,gravityMean)"                
-
- [563] "activity"   
- 
-
-###extracted: part 2 required dataset
-
-Example:
-
-\> str(extracted)
-
- 'data.frame':	10299 obs. of  66 variables:
-
- $ tBodyAcc-mean()-X          : num  0.257 0.286 0.275 0.27 0.275 ...
-
- $ tBodyAcc-mean()-Y          : num  -0.0233 -0.0132 -0.0261 -0.0326 -0.0278 ...
-
- $ tBodyAcc-mean()-Z          : num  -0.0147 -0.1191 -0.1182 -0.1175 -0.1295 ...
+ $ tBodyAcc-std()-X               : num  -0.938 -0.975 -0.994 -0.995 -0.994 ...
 
 ... ...
-
-
-###tidydata: part 5 requried dataset
-
-Example:
-
+ 
 \> str(tidydata)
 
-'data.frame':	180 obs. of  563 variables:
+''data.frame':	180 obs. of  81 variables:
 
- $ subject                             : Factor w/ 30 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10 ...
-
- $ activity                            : Factor w/ 6 levels "WALKING","WALKING_UPSTAIRS",..: 1 1 1 1 1 1 1 1 1 1 ...
-
- $ tBodyAcc-mean()-X                   : num  0.277 0.276 0.276 0.279 0.278 ...
-
- $ tBodyAcc-mean()-Y                   : num  -0.0174 -0.0186 -0.0172 -0.0148 -0.0173 ...
-
- $ tBodyAcc-mean()-Z                   : num  -0.111 -0.106 -0.113 -0.111 -0.108 ...
+ $ subject                        : Factor w/ 30 levels "1","2","3","4",..: 1 2 3 4 5 6 7 8 9 10 ...
+ 
+ $ activity                       : Factor w/ 6 levels "WALKING","WALKING_UPSTAIRS",..: 1 1 1 1 1 1 1 1 1 1 ...
+ 
+ $ tBodyAcc-mean()-X              : num  0.277 0.276 0.276 0.279 0.278 ...
+ 
+ $ tBodyAcc-mean()-Y              : num  -0.0174 -0.0186 -0.0172 -0.0148 -0.0173 ...
+ 
+ $ tBodyAcc-mean()-Z              : num  -0.111 -0.106 -0.113 -0.111 -0.108 ...
+ 
+ $ tBodyAcc-std()-X               : num  -0.284 -0.424 -0.36 -0.441 -0.294 ...
 
 ... ...
-
 
 Thanks for reading!
 
