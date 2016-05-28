@@ -49,7 +49,7 @@ The following files are actually needed to form the merged dataset:
 
 4. rename the "activity" column from numbers to descriptive names, the fianl extracted data is stored in "extracted_data"
 
-5. output the "tidydata" to "tidydata.txt" for mean of each each variable for each activity and each subject
+5. output the "tidydata" to "tidydata.txt" for mean of each each variable for each activity and each subject based on "extracted_data" 
 
 
 ##Examples for the 3 most important datasets "merged_data", "extracted_data" and "tidydata":
