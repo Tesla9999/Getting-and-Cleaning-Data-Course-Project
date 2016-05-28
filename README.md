@@ -51,7 +51,8 @@ The following files are actually needed to form the merged dataset:
 
 5. output the "tidydata" to "tidydata.txt" for mean of each each variable for each activity and each subject
 
-Examples for the 3 most important datasets "merged_data", "extracted_data" and "tidydata":
+
+##Examples for the 3 most important datasets "merged_data", "extracted_data" and "tidydata":
 
 \> str(merged_data)
 
