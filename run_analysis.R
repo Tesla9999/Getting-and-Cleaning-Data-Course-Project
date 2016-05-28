@@ -1,5 +1,5 @@
 # download the zip file to the working directory
-# for windows OS, for Mac, you may need to add method = "curl" parameter
+# was run for windows OS
 # if you have the zip file in your working directory, skip this part
 
 file_url = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
