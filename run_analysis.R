@@ -53,6 +53,7 @@ names(activity) <- "activity"
 names(extract) <- features$V2[index] # only names for mean and std
 
 ## fianl extracted dataset with descriptive names for every column
+## subject and activity are added as the 1st two columns to the dataset
 
 extracted_data <- cbind(subject, activity, extract) # 10299 (row) x 81 (col)
 
