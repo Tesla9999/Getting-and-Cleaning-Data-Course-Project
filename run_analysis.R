@@ -27,7 +27,6 @@ activity_label <- read.table("UCI HAR Dataset/activity_labels.txt")
 
 merged_data <- rbind(x_test, x_train) # 10299 (row) x 561 (col) 
 
-
 # 2. Extracts the measurements on mean and standard deviation 
 
 ## indexing if mean or std in the name
